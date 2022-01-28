@@ -1,0 +1,29 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'eCalend'#225'rio - Samples'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Position.X = 24.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 300.000000000000000000
+    Size.Height = 340.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 384.000000000000000000
+    Size.Width = 289.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Label1'
+    TabOrder = 1
+  end
+end

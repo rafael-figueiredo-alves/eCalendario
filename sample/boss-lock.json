@@ -1,0 +1,14 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2022-01-28T19:39:50.8650733-03:00",
+	"installedModules": {
+		"https://github.com/rafael-figueiredo-alves/ecalendario": {
+			"name": "ecalendario",
+			"version": "v1.0.0",
+			"hash": "5ce1dc265e3d3fddacbbfe7aa7e5d063",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
