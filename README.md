@@ -1,2 +1,2 @@
-# eCalendario
- Componente de Calendário para o Delphi - FMX
+![logotipo](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/logo.png)
+
