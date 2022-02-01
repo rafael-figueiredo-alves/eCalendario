@@ -8,4 +8,4 @@
 ![Mais linhas](https://tokei.rs/b1/github/rafael-figueiredo-alves/eCalendario?color=green&category=code&style=flat-square)
 ![arquivos](https://tokei.rs/b1/github/rafael-figueiredo-alves/eCalendario?color=yellow&category=files&style=flat-square)
 
-You can read this Readme.md in English if you want by [clicking here](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/README-EN.md).
+Você pode ler estas informações em Português [clicando aqui](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/README.md).
