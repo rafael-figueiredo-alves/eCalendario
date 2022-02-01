@@ -12,4 +12,4 @@ You can read this Readme.md in English if you want by [clicking here](https://gi
 
 **Descrição:** Componente Delphi Firemonkey que pode ser facilmente implementado em todas as plataformas que o framework Firemonkey compila (Windows 32-bit, Windows 64-bit, MacOS, iOS, Linux, Android). O objetivo é ser um calendário simples de ser implementado em runtime (este componente não funciona em Design time).
 
-![imagem do componente](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/img_componente.png)
+![imagem do componente em inglês](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/img_componente.png) ![imagem do componente em português](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/img_componente_portugues.png)

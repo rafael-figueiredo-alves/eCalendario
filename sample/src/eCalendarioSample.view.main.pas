@@ -39,7 +39,7 @@ procedure TFormMain.FormCreate(Sender: TObject);
 begin
   teCalendario.New(self, Layout1)
                 .onClickDate(ExibeData)
-                .Locale(EN)
+                .Locale(ptBr)
                 .StartDate(Now)
                 .ShowCalendar;
 end;
