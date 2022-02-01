@@ -9,3 +9,7 @@
 ![arquivos](https://tokei.rs/b1/github/rafael-figueiredo-alves/eCalendario?color=yellow&category=files&style=flat-square)
 
 Você pode ler estas informações em Português [clicando aqui](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/README.md).
+
+**Description:** a firemonkey Delphi component that is easy to implement in any of the Firemonkey framework platforms compiles for (Windows 32-bit, Windows 64-bit, MacOS, iOS, Linux, Android). The goal is to be a simple customizable calendar to be implemented at runtime (it doesn't work at Design time).
+
+![imagem do componente](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/img_componente.png)
