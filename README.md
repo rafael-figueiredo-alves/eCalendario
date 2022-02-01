@@ -7,3 +7,5 @@
 ![Linhas](https://tokei.rs/b1/github/rafael-figueiredo-alves/eTasks?color=red&category=lines&style=flat-square)
 ![Mais linhas](https://tokei.rs/b1/github/rafael-figueiredo-alves/eTasks?color=green&category=code&style=flat-square)
 ![arquivos](https://tokei.rs/b1/github/rafael-figueiredo-alves/eTasks?color=yellow&category=files&style=flat-square)
+
+You can read this Readme.md in English if you want by [readme in English](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/README-EN.md) clicking here
