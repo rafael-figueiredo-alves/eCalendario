@@ -16,57 +16,57 @@ Você pode ler estas informações em Português [clicando aqui](https://github.
 
 # Features
 
-* Componente criado em runtime;
-* Utiliza o conceito de interfaces;
-* É personalizável;
-* Possui animações e pode ser customizado de formas simples
-* Possui suporte para dois idiomas (Português e Inglês);
-* Dispensa instalação de package, basta adicionar a unit ou usar o Boss para gerenciar as dependências (Recomendado);
-* Componente estará em constante atualização para trazer novos recursos e fixes;
-* Simples de usar.
+* A runtime component;
+* Interface concepts;
+* It's customizable;
+* It has animations and it can be customized;
+* It supports two languages (Portuguese e English);
+* You don't need to install package,just add the unit or use Boss to manage your dependencies (Recommended);
+* It will be constantly updated;
+* Very easy to use it.
 
-# Como começar a usar o componente
+# How to begin to use eCalendario
 
-Para começar a usar o eCalendário, você precisa apenas da Unit eCalendario.component.pas e do eCalendario.component.fmx. Você pode baixar o zip do código (ou mesmo do release que é mais recomendável) e adicionar no seu projeto ou utilizar o [Boss](https://github.com/HashLoad/boss), com os comandos abaixo:
+To start to use eCalendario, you just need the Units eCalendario.component.pas and eCalendario.component.fmx. You can download the zipped source code (the released one is more suitable) and add to your project or you can use [Boss](https://github.com/HashLoad/boss), using the following commands:
 
-Para iniciar o projeto (criar arquivo boss.json e poder controlar as dependências)
+Start a new project (create the boss.json file and manage your dependencies)
 
 > ` Boss init `
 
-Para instalar o eCalendario como dependência
+And then use the following command to install eCalendario as a dependency
 > ` Boss install https://github.com/rafael-figueiredo-alves/eCalendario `
 
-Depois basta usar o código da seção abaixo para utilizar e não esquecer de declarar a Unit eCalendario.Component.pas nas uses onde desejar usar o calendário.
+Now you can follow the instructions below to add the component to your project, not forgetting to add the eCalendario.Component.pas to your Uses.
 
-# Como colocar o eCalendario no form do seu projeto
+# How to add eCalendario to a form in your project
 
-A primeira coisa a fazer para poder usar o eCalendario em um dos formulários do seu projeto, é colocar um **Tlayout** no form com as propriedades **Height** de pelo menos *340* e **Width** de pelo menos _300_.
+The first thing you need to do to start using eCalendario in your project is to put a **Tlayout** in a form with the properties **Height** set to at least *340* and **Width** to _300_.
 
 ![imagem do form com TLayout](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/TLayout.png)
 
-Agora, no evento `onCreate` (pode ser também no `onShow`), você deverá utilizar os seguintes comandos na seguinte ordem:
+Now, on the event `onCreate` (or on the event `onShow`), you need to use the following commands in the order I'll present to you:
 
-> `TeCalendario.New(`**formulário ao qual calendario será vinculado** `, ` **layout onde o calendário será renderizado**`)`
+> `TeCalendario.New(`**form reference where you added the TLayout** `, ` **TLayout where the calendar will be rendered**`)`
 
-Este comando serve para criar o eCalendario, chamando a classe (que é uma interface) TeCalendario e chamando o método New (que criará uma instância da classe), onde definiremos dois parametros: o formulário onde será usado o calendário, e o Tlayout onde será renderizado.
+This command serves to create eCalendario, calling the class (that is an interfaced class) **TeCalendario** and calling the method New (that will instantiate the new class), and we need to set two parameters: the form that eCalendario will be placed, and the Tlayout where it will be rendered.
 
-> `onClickDate(`**Função a ser acionada ao se clicar num dia ou ao trocar-se os meses e anos no calendário**`)`
+> `onClickDate(`**a Function to let the program knows what will happen any time you click on a day or change the month or year**`)`
 
-Este comando deve vir após a criação para associar o método (ação) que será usado quando trocarmos a data, seja clicando numm dia, trocando o mês ou o ano. O parametro deve ser uma `function` com a seguinte assinatura: `function nome_da_função (Data: TDate);`
+This command needs to come after the method New to associate the method (action) that will be called any time you change the day, by clicking on a day, or changing the month or year. The parameter needs to be a  `function` with the following signature: `function function_name (Date: TDate);`
 
-> `Locale(`**aceita apenas os valores:** *ptBr* | *EN* `)`
+> `Locale(`**it only accepts one of these options:** *ptBr* | *EN* `)`
 
-O comando Locale é usado para definir o idioma do calendário. Até o momento há apenas duas possibilidades:
-* **ptBr** - Para definir o calendário na língua portuguesa;
-* **EN** - Para definir o calendário na língua inglesa.
+The command Locale is used to set the language of the calendar. Until the moment there are only two possibilities:
+* **ptBr** - to set the calendar to portuguese;
+* **EN** - to set the calendar to English.
 
-> `StartDate(`**aceita um valor do tipo TDate ou TDateTime, como o now()**`)`
+> `StartDate(`**It accepts only values of TDate or TDateTime type, like now()**`)`
 
-O `StartDate` é usado para definir a data atual (o hoje) ou a data que deve estar selecionada por padrão. Deve receber um parametro no formato TDate ou TDateTime.
+The `StartDate` is used to set the current date (today) or the date that needs to be selected by default. It needs a parameter in a TDate or TDateTime type.
 
 > `ShowCalendar;`
 
-É este último comando que realiza a mágica de exibir um calendário no nosso formulário dentro do layout definido no método `New`. Veja abaixo um exemplo de código para usar o eCalendario usando o que foi apresentado:
+Annd here's the command that makes the calendar to be shown in our form insite the TLayout we set in the `New` method. Take a look at the complete example of how to use this component:
 
 ```Delphi
 procedure TFormMain.FormCreate(Sender: TObject);
@@ -84,9 +84,9 @@ begin
 end;
 ```
 
-# Configurando o calendário
+# Customizing the calendar
 
-Se desejar personalizar o calendário, pode-se editar diretamente no arquivo eCalendario.Component.fmx ou pode-se usar o seguinte código:
+If you want to customize the calendar, you can edit it directly in the eCalendario.Component.fmx or you can use the following script:
 
 ```Delphi
                 .config
@@ -95,7 +95,7 @@ Se desejar personalizar o calendário, pode-se editar diretamente no arquivo eCa
                   .&End
 ```
 
-O comando `Config` permite abrir as opções de edição (por enquanto apenas duas disponíveis). Em `BackgroundColor()`, você congfigura a cor de fundo do calendário (que é branco por padrão), sendo que o parametro a ser usado deve ser do tipo TAlphaColors. O comando `SundaysColor()` é o responsável por definir a cor dos domingos no calendário (que por padrão é azul). Aceita parametro do tipo TAlphaColors. O comando `&End` sai da interface de configuração e volta para a principal. Veja o trecho do Código abaixo com a adição de uma customização simples:
+The command `Config` lets you access the config options (only two available up to now). The `BackgroundColor()` method lets you set a background color to your calendar (that is white by default). The parameter must be TAlphaColors type. The `SundaysColor()` method is responsible to set the color of Sundays (that are blue by default). It accepts a parameter of TAlphaColors type. And the command `&End` closes the config interface and brings you back to the main interface of eCalendario. Take a look at the code snippet setting a basic customization:
 
 ```Delphi
 procedure TFormMain.FormCreate(Sender: TObject);
