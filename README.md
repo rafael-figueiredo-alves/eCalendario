@@ -39,3 +39,5 @@ Depois basta usar o código da seção abaixo para utilizar e não esquecer de d
 # Como colocar o eCalendario no form do seu projeto
 
 A primeira coisa a fazer para poder usar o eCalendario em um dos formulários do seu projeto, é colocar um **Tlayout** no form com as propriedades **Height** de pelo menos *340* e **Width** de pelo menos _300_.
+
+![imagem do form com TLayout](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/TLayout.png)
