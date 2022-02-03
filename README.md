@@ -95,7 +95,7 @@ Se desejar personalizar o calendário, pode-se editar diretamente no arquivo eCa
                   .&End
 ```
 
-O comando `Config` permite abrir as opções de edição (por enquanto apenas duas disponíveis). Em `BackgroundColor()`, você congfigura a cor de fundo do calendário (que é branco por padrão), sendo que o parametro a ser usado deve ser do tipo TAlphaColors. O comando `SundaysColor()` é o responsável por definir a cor dos domingos no calendário (que por padrão é azul). Aceita parametro do tipo TAlphaColors. O comando `&End` sai da interface de configuração e volta para a principal. Veja o trecho do Código abaixo com a adição de uma customização simples:
+O comando `Config` permite abrir as opções de edição (por enquanto apenas duas disponíveis). Em `BackgroundColor()`, você configura a cor de fundo do calendário (que é branco por padrão), sendo que o parametro a ser usado deve ser do tipo TAlphaColors. O comando `SundaysColor()` é o responsável por definir a cor dos domingos no calendário (que por padrão é azul). Aceita parametro do tipo TAlphaColors. O comando `&End` sai da interface de configuração e volta para a principal. Veja o trecho do Código abaixo com a adição de uma customização simples:
 
 ```Delphi
 procedure TFormMain.FormCreate(Sender: TObject);
