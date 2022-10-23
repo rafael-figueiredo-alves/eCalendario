@@ -41,8 +41,12 @@ var
  Version_eCalendario: string;
 begin
   teCalendario.New(self, Layout1)
+                .config
+                  .ButtonsColor(TAlphaColorRec.Red)
+                  .DaysColor(TAlphaColorRec.Blue)
+                  .&End
                 .onClickDate(ExibeData)
-                .Locale(ptBr)
+                .Locale(it)
                 .StartDate(Now)
                 .GetVersion(Version_eCalendario)
                 .ShowCalendar;
