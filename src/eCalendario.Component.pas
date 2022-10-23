@@ -3,13 +3,13 @@ unit eCalendario.Component;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Ani,
   FMX.Objects, FMX.TabControl, FMX.Controls.Presentation, FMX.StdCtrls,
-  FMX.Layouts;
+  FMX.Layouts, FMX.Effects, FMX.Filter.Effects;
 
 type
-  TLocale = (ptBr, EN);
+  TLocale = (ptBr, EN, Espanol, Fr, Ger, It);
 
   tClickDate = procedure (Value : TDate) of object;
 
@@ -22,6 +22,7 @@ type
     Function Locale (Value : TLocale) : ieCalendario;
     Function ShowCalendar : ieCalendario;
     Function config : iConfig;
+    Function GetVersion(out Version: string): ieCalendario;
   end;
 
   iConfig = interface
@@ -29,6 +30,11 @@ type
     Function &End : ieCalendario;
     Function BackgroundColor (Color : TAlphaColor) : iConfig;
     Function SundaysColor (Color : TAlphaColor) : iConfig;
+    Function SelectorColor(Color: TAlphaColor) : iConfig;
+    Function DaysColor(Color: TAlphaColor) : iConfig;
+    Function MonthYearColor(Color: TAlphaColor) : iConfig;
+    Function LineColor(Color: TAlphaColor) : iConfig;
+    Function ButtonsColor(Color: TAlphaColor) : iConfig;
   end;
 
   TeCalendario = class(TForm, ieCalendario, iConfig)
@@ -116,6 +122,10 @@ type
     Month_11: TTabItem;
     Month_12: TTabItem;
     StyleBook1: TStyleBook;
+    btnNextMonthColor: TFillRGBEffect;
+    BtnBackMonthColor: TFillRGBEffect;
+    BtnBackYearColor: TFillRGBEffect;
+    BtnNextYearColor: TFillRGBEffect;
     procedure Btn_Next_YearClick(Sender: TObject);
     procedure Btn_Next_MonthClick(Sender: TObject);
     procedure Btn_Back_YearClick(Sender: TObject);
@@ -134,6 +144,7 @@ type
     Function Month(value : Integer): string;
     Function SelectedDate : TDate;
     Procedure SetLanguage;
+    Procedure ValidateDay;
   public
     Function StartDate(FDate : TDate) : ieCalendario;
     Function onClickDate (Value : TClickDate): ieCalendario;
@@ -144,12 +155,21 @@ type
     Function &End : ieCalendario;
     Function BackgroundColor (Color : TAlphaColor) : iConfig;
     Function SundaysColor (Color : TAlphaColor) : iConfig;
+    Function GetVersion(out Version: string): ieCalendario;
+    Function SelectorColor(Color: TAlphaColor) : iConfig;
+    Function DaysColor(Color: TAlphaColor) : iConfig;
+    Function MonthYearColor(Color: TAlphaColor) : iConfig;
+    Function LineColor(Color: TAlphaColor) : iConfig;
+    Function ButtonsColor(Color: TAlphaColor) : iConfig;
   end;
 
 var
   eCalendario1: TeCalendario;
 
 implementation
+
+uses
+  System.SysUtils;
 
 {$R *.fmx}
 
@@ -164,6 +184,12 @@ end;
 function TeCalendario.&End: ieCalendario;
 begin
   Result := self;
+end;
+
+function TeCalendario.GetVersion(out Version: string): ieCalendario;
+begin
+  Result := self;
+  Version := '1.1';
 end;
 
 procedure TeCalendario.Btn_Back_MonthClick(Sender: TObject);
@@ -214,6 +240,17 @@ begin
   FClick(SelectedDate);
 end;
 
+function TeCalendario.ButtonsColor(Color: TAlphaColor): iConfig;
+begin
+  Result := Self;
+
+  BtnBackMonthColor.Color := Color;
+  btnNextMonthColor.Color := Color;
+
+  BtnBackYearColor.Color  := Color;
+  BtnNextYearColor.Color  := Color;
+end;
+
 procedure TeCalendario.ClearCalendar;
 var i : Integer;
 begin
@@ -229,6 +266,54 @@ begin
   Result := Self;
 end;
 
+function TeCalendario.DaysColor(Color: TAlphaColor): iConfig;
+begin
+  Result := self;
+  Label_Monday.TextSettings.FontColor    := Color;
+  Label_Tuesday.TextSettings.FontColor   := Color;
+  Label_Wednesday.TextSettings.FontColor := Color;
+  Label_Thursday.TextSettings.FontColor  := Color;
+  Label_Friday.TextSettings.FontColor    := Color;
+  Label_Saturday.TextSettings.FontColor  := Color;
+  Day_2.TextSettings.FontColor  := Color;
+  Day_3.TextSettings.FontColor  := Color;
+  Day_4.TextSettings.FontColor  := Color;
+  Day_5.TextSettings.FontColor  := Color;
+  Day_6.TextSettings.FontColor  := Color;
+  Day_7.TextSettings.FontColor  := Color;
+  Day_9.TextSettings.FontColor  := Color;
+  Day_10.TextSettings.FontColor := Color;
+  Day_11.TextSettings.FontColor := Color;
+  Day_12.TextSettings.FontColor := Color;
+  Day_13.TextSettings.FontColor := Color;
+  Day_14.TextSettings.FontColor := Color;
+  Day_16.TextSettings.FontColor := Color;
+  Day_17.TextSettings.FontColor := Color;
+  Day_18.TextSettings.FontColor := Color;
+  Day_19.TextSettings.FontColor := Color;
+  Day_20.TextSettings.FontColor := Color;
+  Day_21.TextSettings.FontColor := Color;
+  Day_23.TextSettings.FontColor := Color;
+  Day_24.TextSettings.FontColor := Color;
+  Day_25.TextSettings.FontColor := Color;
+  Day_26.TextSettings.FontColor := Color;
+  Day_27.TextSettings.FontColor := Color;
+  Day_28.TextSettings.FontColor := Color;
+  Day_30.TextSettings.FontColor := Color;
+  Day_31.TextSettings.FontColor := Color;
+  Day_32.TextSettings.FontColor := Color;
+  Day_33.TextSettings.FontColor := Color;
+  Day_34.TextSettings.FontColor := Color;
+  Day_35.TextSettings.FontColor := Color;
+  Day_37.TextSettings.FontColor := Color;
+  Day_38.TextSettings.FontColor := Color;
+  Day_39.TextSettings.FontColor := Color;
+  Day_40.TextSettings.FontColor := Color;
+  Day_41.TextSettings.FontColor := Color;
+  Day_42.TextSettings.FontColor := Color;
+end;
+
+
 procedure TeCalendario.Day_1Click(Sender: TObject);
 begin
   if TLabel(Sender).Text <> '' then
@@ -241,6 +326,12 @@ begin
    end;
 end;
 
+function TeCalendario.LineColor(Color: TAlphaColor): iConfig;
+begin
+  Result := self;
+  Linha_inf_dias_semana.Stroke.Color := Color;
+end;
+
 function TeCalendario.Locale(Value: TLocale): ieCalendario;
 begin
   Result := self;
@@ -251,7 +342,7 @@ end;
 function TeCalendario.Month(value: Integer): string;
 begin
  case FLocale of
-   ptBr:
+   ptBr:  //Portuguese (Brazil)
     begin
       case value of
       1: Result := 'Janeiro';
@@ -268,7 +359,7 @@ begin
       12: Result := 'Dezembro';
       end;
     end;
-   EN:
+   EN:    //English
     begin
       case value of
       1: Result := 'January';
@@ -285,7 +376,82 @@ begin
       12: Result := 'December';
       end;
     end;
+   Espanol:  //Spanish
+    begin
+      case value of
+      1: Result := 'Enero';
+      2: Result := 'Febrero';
+      3: Result := 'Marzo';
+      4: Result := 'Abril';
+      5: Result := 'Mayo';
+      6: Result := 'Junio';
+      7: Result := 'Julio';
+      8: Result := 'Agosto';
+      9: Result := 'Septiembre';
+      10: Result := 'Octubre';
+      11: Result := 'Novembre';
+      12: Result := 'Decembre';
+      end;
+    end;
+   Fr: //French
+    begin
+      case value of
+      1: Result := 'Janvier';
+      2: Result := 'Février';
+      3: Result := 'Mars';
+      4: Result := 'Avril';
+      5: Result := 'Mai';
+      6: Result := 'Juin';
+      7: Result := 'Juillet';
+      8: Result := 'Août';
+      9: Result := 'Septembre';
+      10: Result := 'Octobre';
+      11: Result := 'Novembre';
+      12: Result := 'Décembre';
+      end;
+    end;
+   Ger: //German
+    begin
+      case value of
+      1: Result := 'Januar';
+      2: Result := 'Februar';
+      3: Result := 'März';
+      4: Result := 'April';
+      5: Result := 'Mai';
+      6: Result := 'Juni';
+      7: Result := 'Juli';
+      8: Result := 'August';
+      9: Result := 'September';
+      10: Result := 'Oktober';
+      11: Result := 'November';
+      12: Result := 'Dezember';
+      end;
+    end;
+   It: //Italian
+    begin
+      case value of
+      1: Result := 'Gennaio';
+      2: Result := 'Febbraio';
+      3: Result := 'Marzo';
+      4: Result := 'Aprile';
+      5: Result := 'Maggio';
+      6: Result := 'Giugno';
+      7: Result := 'Luglio';
+      8: Result := 'Agosto';
+      9: Result := 'Settembre';
+      10: Result := 'Ottobre';
+      11: Result := 'Novembre';
+      12: Result := 'Dicembre';
+      end;
+    end;
  end;
+end;
+
+function TeCalendario.MonthYearColor(Color: TAlphaColor): iConfig;
+begin
+  Result := self;
+  Label_Year.TextSettings.FontColor  := Color;
+  Label_Month.TextSettings.FontColor := Color;
 end;
 
 procedure TeCalendario.MountCalendar;
@@ -332,7 +498,8 @@ begin
      N_Day := N_Day + 1;
    end;
   Selector.EndAngle := 0;
-  Selector.Parent := TLabel(FindComponent('Dia_' + inttostr((FirstDay + Fday) - 1)));
+  ValidateDay;
+  Selector.Parent := TLabel(FindComponent('Day_' + inttostr((FirstDay + Fday) - 1)));
   Ani_Selector.Start;
 end;
 
@@ -354,10 +521,16 @@ begin
   Result := EncodeDate(FYear, FMonth, FDay);
 end;
 
+function TeCalendario.SelectorColor(Color: TAlphaColor): iConfig;
+begin
+  Result := self;
+  Selector.Stroke.Color := Color;
+end;
+
 procedure TeCalendario.SetLanguage;
 begin
   case FLocale of
-    ptBr:
+    ptBr:  //Portuguese (Brazil)
      begin
        Label_Sunday.Text    := 'Dom';
        Label_Monday.Text    := 'Seg';
@@ -371,7 +544,7 @@ begin
        Btn_Back_Month.Hint  := 'Voltar Mês';
        Btn_Next_Month.Hint  := 'Avançar Mês';
      end;
-    EN:
+    EN:     //English
      begin
        Label_Sunday.Text    := 'Sun';
        Label_Monday.Text    := 'Mon';
@@ -384,6 +557,62 @@ begin
        Btn_Next_Year.Hint   := 'Next Year';
        Btn_Back_Month.Hint  := 'Previous Month';
        Btn_Next_Month.Hint  := 'Next Month';
+     end;
+    Espanol: //Spanish
+     begin
+       Label_Sunday.Text    := 'Dom';
+       Label_Monday.Text    := 'Lun';
+       Label_Tuesday.Text   := 'Mar';
+       Label_Wednesday.Text := 'Mie';
+       Label_Thursday.Text  := 'Jue';
+       Label_Friday.Text    := 'Vie';
+       Label_Saturday.Text  := 'Sáb';
+       Btn_Back_Year.Hint   := 'Año Atrás';
+       Btn_Next_Year.Hint   := 'El Próximo Año';
+       Btn_Back_Month.Hint  := 'Mes Posterior';
+       Btn_Next_Month.Hint  := 'Mes Próximo';
+     end;
+    Fr: //French
+     begin
+       Label_Sunday.Text    := 'Dim';
+       Label_Monday.Text    := 'Lun';
+       Label_Tuesday.Text   := 'Mar';
+       Label_Wednesday.Text := 'Mer';
+       Label_Thursday.Text  := 'Jeu';
+       Label_Friday.Text    := 'Ven';
+       Label_Saturday.Text  := 'Sam';
+       Btn_Back_Year.Hint   := 'Année de Retour';
+       Btn_Next_Year.Hint   := 'L’année prochaine';
+       Btn_Back_Month.Hint  := 'Mois de Retour';
+       Btn_Next_Month.Hint  := 'Prochain';
+     end;
+    Ger: //Germany
+     begin
+       Label_Sunday.Text    := 'So.';
+       Label_Monday.Text    := 'Mo.';
+       Label_Tuesday.Text   := 'Di.';
+       Label_Wednesday.Text := 'Mittw.';
+       Label_Thursday.Text  := 'Do.';
+       Label_Friday.Text    := 'Fr.';
+       Label_Saturday.Text  := 'Sa.';
+       Btn_Back_Year.Hint   := 'Zurück Jahr';
+       Btn_Next_Year.Hint   := 'Nächstes Jahr';
+       Btn_Back_Month.Hint  := 'zurück Monat zurück';
+       Btn_Next_Month.Hint  := 'Nächster Monat';
+     end;
+    It: //Italian
+     begin
+       Label_Sunday.Text    := 'Dom.';
+       Label_Monday.Text    := 'Lun.';
+       Label_Tuesday.Text   := 'Mar.';
+       Label_Wednesday.Text := 'Mer.';
+       Label_Thursday.Text  := 'Gio.';
+       Label_Friday.Text    := 'Ven.';
+       Label_Saturday.Text  := 'Sab.';
+       Btn_Back_Year.Hint   := 'Anno indietro';
+       Btn_Next_Year.Hint   := 'L´anno prossimo';
+       Btn_Back_Month.Hint  := 'Indietro Mese';
+       Btn_Next_Month.Hint  := 'Il mese prossimo';
      end;
   end;
 end;
@@ -417,6 +646,12 @@ begin
   Day_22.TextSettings.FontColor        := Color;
   Day_29.TextSettings.FontColor        := Color;
   Day_36.TextSettings.FontColor        := Color;
+end;
+
+procedure TeCalendario.ValidateDay;
+begin
+  if FDay > monthDays[IsLeapYear(FYear)][FMonth] then
+   FDay := monthDays[IsLeapYear(FYear)][FMonth];
 end;
 
 end.
