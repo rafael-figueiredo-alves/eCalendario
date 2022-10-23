@@ -1,8 +1,8 @@
 ![logotipo](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/logo.png)
 
 ![Informações sobre projeto](https://img.shields.io/badge/Delphi%20Version-10.4.2%20Community-brightgreen))
-![Status do projeto](https://img.shields.io/badge/Project's%20status-Version%201.0%20released-brightgreen)
-![Versão](https://img.shields.io/badge/Project's%20version-1.0-brightgreen)
+![Status do projeto](https://img.shields.io/badge/Project's%20status-Version%201.1%20released-brightgreen)
+![Versão](https://img.shields.io/badge/Project's%20version-1.1-brightgreen)
 ![estrelas do projeto](https://img.shields.io/github/stars/rafael-figueiredo-alves/eCalendario?style=flat-square)
 ![Linhas](https://tokei.rs/b1/github/rafael-figueiredo-alves/eCalendario?color=red&category=lines&style=flat-square)
 ![Mais linhas](https://tokei.rs/b1/github/rafael-figueiredo-alves/eCalendario?color=green&category=code&style=flat-square)
@@ -54,11 +54,15 @@ This command serves to create eCalendario, calling the class (that is an interfa
 
 This command needs to come after the method New to associate the method (action) that will be called any time you change the day, by clicking on a day, or changing the month or year. The parameter needs to be a  `function` with the following signature: `function function_name (Date: TDate);`
 
-> `Locale(`**it only accepts one of these options:** *ptBr* | *EN* `)`
+> `Locale(`**it only accepts one of these options:** *ptBr* | *EN* | *Espanol | *Fr* | *It* | *Ger* `)`
 
 The command Locale is used to set the language of the calendar. Until the moment there are only two possibilities:
-* **ptBr** - to set the calendar to portuguese;
+* **ptBr** - to set the calendar to Portuguese;
 * **EN** - to set the calendar to English.
+* **Espanol** - to set the calendar to Spanish.
+* **It** - to set the calendar to Italian.
+* **Fr** - to set the calendar to French.
+* **Ger** - to set the calendar to German.
 
 > `StartDate(`**It accepts only values of TDate or TDateTime type, like now()**`)`
 

@@ -1,8 +1,8 @@
 ![logotipo](https://github.com/rafael-figueiredo-alves/eCalendario/blob/main/img/logo.png)
 
 ![Informações sobre projeto](https://img.shields.io/badge/Vers%C3%A3o%20do%20Delphi-10.4.2%20Community-brightgreen)
-![Status do projeto](https://img.shields.io/badge/Status%20do%20projeto-Vers%C3%A3o%201.0%20finalizada-brightgreen)
-![Versão](https://img.shields.io/badge/Vers%C3%A3o%20do%20Projeto-1.0-brightgreen)
+![Status do projeto](https://img.shields.io/badge/Status%20do%20projeto-Vers%C3%A3o%201.1%20finalizada-brightgreen)
+![Versão](https://img.shields.io/badge/Vers%C3%A3o%20do%20Projeto-1.1-brightgreen)
 ![estrelas do projeto](https://img.shields.io/github/stars/rafael-figueiredo-alves/eCalendario?style=flat-square)
 ![Linhas](https://tokei.rs/b1/github/rafael-figueiredo-alves/eCalendario?color=red&category=lines&style=flat-square)
 ![Mais linhas](https://tokei.rs/b1/github/rafael-figueiredo-alves/eCalendario?color=green&category=code&style=flat-square)
@@ -54,11 +54,15 @@ Este comando serve para criar o eCalendario, chamando a classe (que é uma inter
 
 Este comando deve vir após a criação para associar o método (ação) que será usado quando trocarmos a data, seja clicando numm dia, trocando o mês ou o ano. O parametro deve ser uma `function` com a seguinte assinatura: `function nome_da_função (Data: TDate);`
 
-> `Locale(`**aceita apenas os valores:** *ptBr* | *EN* `)`
+> `Locale(`**aceita apenas os valores:** *ptBr* | *EN* | *Espanol* | *Fr* | *It* | *Ger* `)`
 
 O comando Locale é usado para definir o idioma do calendário. Até o momento há apenas duas possibilidades:
 * **ptBr** - Para definir o calendário na língua portuguesa;
 * **EN** - Para definir o calendário na língua inglesa.
+* **Espanol** - Para definir o calendário na língua Espanhola
+* **Fr** - Para definir o calendário na língua Francesa.
+* **It** - Para definir o calendário na língua Italiana.
+* **Ger** - Para definir o calendário na língua Alemã.
 
 > `StartDate(`**aceita um valor do tipo TDate ou TDateTime, como o now()**`)`
 
