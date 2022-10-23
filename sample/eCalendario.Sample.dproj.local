@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/04/14 19:31:17.000.686,=C:\Users\famil\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/04/14 19:31:19.000.913,=C:\Users\famil\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2019/04/14 19:31:19.000.600,=C:\Users\famil\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2019/05/01 20:33:36.000.167,=C:\Users\famil\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/07/23 18:37:48.000.161,=C:\Users\famil\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/09/15 19:59:46.000.034,=C:\Users\famil\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/09/29 19:11:49.000.882,=C:\Users\famil\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/10/27 18:29:49.000.881,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/11/03 15:46:43.000.462,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/25 18:25:49.000.707,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/01 17:45:24.000.641,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/01 18:57:17.000.355,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/01 18:57:36.000.697,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/01 19:00:02.000.965,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/03/01 19:00:34.000.706,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/17 17:08:06.000.202,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/17 17:55:34.000.515,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/25 17:22:26.000.860,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/07/19 16:59:45.000.646,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/07/19 17:44:13.000.996,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/08/09 17:25:49.000.220,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/08/09 17:46:48.000.287,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/09/06 17:54:50.000.083,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/09/06 17:56:09.000.392,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/09/27 16:57:13.000.971,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/09/27 16:57:46.000.665,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/10/25 19:03:42.000.347,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/12/30 18:16:08.000.555,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2021/09/12 16:30:27.000.528,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/01/28 14:28:58.000.568,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/01/28 19:36:57.000.018,=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/01/28 19:37:36.000.466,C:\Meus Projetos\eCalendario\sample\src\eCalendarioSample.view.main.fmx=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.fmx</Transaction>
+    <Transaction>2022/01/28 19:37:36.000.466,C:\Meus Projetos\eCalendario\sample\src\eCalendarioSample.view.main.pas=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/01/28 19:37:46.000.780,C:\Meus Projetos\eCalendario\sample\eCalendario.Sample.dproj=C:\Users\famil\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

@@ -11,6 +11,7 @@ type
   TFormMain = class(TForm)
     Layout1: TLayout;
     Label1: TLabel;
+    Label2: TLabel;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -36,12 +37,17 @@ begin
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
+var
+ Version_eCalendario: string;
 begin
   teCalendario.New(self, Layout1)
                 .onClickDate(ExibeData)
                 .Locale(ptBr)
                 .StartDate(Now)
+                .GetVersion(Version_eCalendario)
                 .ShowCalendar;
+
+  Label2.Text := 'eCalendario - Version ' + Version_eCalendario;
 end;
 
 end.
