@@ -54,9 +54,9 @@ Este comando serve para criar o eCalendario, chamando a classe (que é uma inter
 
 Este comando deve vir após a criação para associar o método (ação) que será usado quando trocarmos a data, seja clicando numm dia, trocando o mês ou o ano. O parametro deve ser uma `function` com a seguinte assinatura: `function nome_da_função (Data: TDate);`
 
-> `Locale(`**aceita apenas os valores:** *ptBr* | *EN* | *Espanol* | *Fr* | *It* | *Ger* `)`
+> `Locale(`**aceita os valores:** *ptBr* | *EN* | *Espanol* | *Fr* | *It* | *Ger* `)`
 
-O comando Locale é usado para definir o idioma do calendário. Até o momento há apenas duas possibilidades:
+O comando Locale é usado para definir o idioma do calendário. Há seis possibilidades:
 * **ptBr** - Para definir o calendário na língua portuguesa;
 * **EN** - Para definir o calendário na língua inglesa.
 * **Espanol** - Para definir o calendário na língua Espanhola
@@ -96,10 +96,15 @@ Se desejar personalizar o calendário, pode-se editar diretamente no arquivo eCa
                 .config
                   .BackgroundColor(talphaColors.Yellow)
                   .SundaysColor(talphacolors.Red)
+                  .SelectorColor(TAlphaColors.Blue)
+                  .DaysColor(TAlphaColors.Blue)
+                  .LineColor(TAlphaColors.Blue)
+                  .MonthYearColor(TAlphaColors.Blue)
+                  .ButtonsColor(TAlphaColors.Blue)                  
                   .&End
 ```
 
-O comando `Config` permite abrir as opções de edição (por enquanto apenas duas disponíveis). Em `BackgroundColor()`, você configura a cor de fundo do calendário (que é branco por padrão), sendo que o parametro a ser usado deve ser do tipo TAlphaColors. O comando `SundaysColor()` é o responsável por definir a cor dos domingos no calendário (que por padrão é azul). Aceita parametro do tipo TAlphaColors. O comando `&End` sai da interface de configuração e volta para a principal. Veja o trecho do Código abaixo com a adição de uma customização simples:
+O comando `Config` permite abrir as opções de edição. Em `BackgroundColor()`, você configura a cor de fundo do calendário (que é branco por padrão), sendo que o parametro a ser usado deve ser do tipo TAlphaColors. O comando `SundaysColor()` é o responsável por definir a cor dos domingos no calendário (que por padrão é azul). Aceita parametro do tipo TAlphaColors. O comando `SelectorColor()` é o responsável por definir a cor do seletor e aceita parametro do tipo TAlphaColors. Para setar a cor da linha, dos botões, do nome do mês e ano use os respectivos comandos: `LineColor()`, `MonthYearColor()`, `ButtonsColor()`. Para definir a cor dos dias, com exceção dos Domingos, utilize o comando `DaysColor()`. Todos esses comandos esperam um parametro do tipo TAlphaColors. O comando `&End` sai da interface de configuração e volta para a principal. Veja o trecho do Código abaixo com a adição de uma customização simples:
 
 ```Delphi
 procedure TFormMain.FormCreate(Sender: TObject);

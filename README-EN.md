@@ -54,9 +54,9 @@ This command serves to create eCalendario, calling the class (that is an interfa
 
 This command needs to come after the method New to associate the method (action) that will be called any time you change the day, by clicking on a day, or changing the month or year. The parameter needs to be a  `function` with the following signature: `function function_name (Date: TDate);`
 
-> `Locale(`**it only accepts one of these options:** *ptBr* | *EN* | *Espanol | *Fr* | *It* | *Ger* `)`
+> `Locale(`**it accepts one of these options:** *ptBr* | *EN* | *Espanol | *Fr* | *It* | *Ger* `)`
 
-The command Locale is used to set the language of the calendar. Until the moment there are only two possibilities:
+The command Locale is used to set the language of the calendar. There are six possibilities:
 * **ptBr** - to set the calendar to Portuguese;
 * **EN** - to set the calendar to English.
 * **Espanol** - to set the calendar to Spanish.
@@ -96,10 +96,15 @@ If you want to customize the calendar, you can edit it directly in the eCalendar
                 .config
                   .BackgroundColor(talphaColors.Yellow)
                   .SundaysColor(talphacolors.Red)
+                  .SelectorColor(TAlphaColors.Blue)
+                  .DaysColor(TAlphaColors.Blue)
+                  .LineColor(TAlphaColors.Blue)
+                  .MonthYearColor(TAlphaColors.Blue)
+                  .ButtonsColor(TAlphaColors.Blue)
                   .&End
 ```
 
-The command `Config` lets you access the config options (only two available up to now). The `BackgroundColor()` method lets you set a background color to your calendar (that is white by default). The parameter must be TAlphaColors type. The `SundaysColor()` method is responsible to set the color of Sundays (that are blue by default). It accepts a parameter of TAlphaColors type. And the command `&End` closes the config interface and brings you back to the main interface of eCalendario. Take a look at the code snippet setting a basic customization:
+The command `Config` lets you access the config options. The `BackgroundColor()` method lets you set a background color to your calendar (that is white by default). The parameter must be TAlphaColors type. The `SundaysColor()` method is responsible to set the color of Sundays (that are blue by default). It accepts a parameter of TAlphaColors type. The `SelectorColor()` method is responsible to set the color of the selector and it accepts a parameter of TAlphaColors type. The `DaysColor()` method is responsible to set the color of the days, except Sundays. It also accepts a parameter of TAlphaColors type. The `LineColor()` method is responsible to set the color of the line and to set the color of the name of the month and year use `MonthYearColor()`. They also accept a parameter of TAlphaColors type. And, if you want to set the color of the buttons, you can use `ButtonsColor()`. And the command `&End` closes the config interface and brings you back to the main interface of eCalendario. Take a look at the code snippet setting a basic customization:
 
 ```Delphi
 procedure TFormMain.FormCreate(Sender: TObject);
